@@ -1,0 +1,10 @@
+{
+    "dataset_path": "/data/CROWD_DATASETS/FDST/test_data",
+    "outputdir_prefix": "output/fdst/test_data_07",
+    "model": "Res101_SFCN",
+    "model_path": "models/11-ResSFCN-101_all_ep_94_mae_26.8_mse_66.1.pth",
+
+
+    "image_size": [480, 640],
+    "batch_size": 8
+}

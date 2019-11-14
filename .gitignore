@@ -2,3 +2,5 @@ models
 output
 __pycache__
 .ipynb_checkpoints
+input_videos
+input_frames

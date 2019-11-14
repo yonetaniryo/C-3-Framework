@@ -34,14 +34,17 @@ def main(params):
         file_list = np.sort(glob(v + '/*.jpg'))
 
         imgs = torch.zeros(len(file_list), 3, H, W)
-        for i, f in enumerate(file_list):
+        for i, f in enumerate(tqdm(file_list)):
             imgs[i] = data_transform(Image.open(f))
 
         train_dataset = torch.utils.data.TensorDataset(imgs, torch.zeros(len(file_list)))
         train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=params['batch_size'], shuffle=False)
         pred_map = []
         for x, y in tqdm(train_loader):
-            pred_map.append(net.test_forward(x.cuda()).squeeze().detach().cpu().numpy())
+            tmp = net.test_forward(x.cuda()).squeeze().detach().cpu().numpy()
+            if(len(tmp.shape) == 2):
+                tmp = tmp[np.newaxis]
+            pred_map.append(tmp)
         pred_map = np.concatenate(pred_map)
         np.savez_compressed(outputdir + os.path.basename(v), pred_map)
 

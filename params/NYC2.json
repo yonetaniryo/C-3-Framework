@@ -1,0 +1,9 @@
+{
+    "dataset_path": "/data/CROWD_DATASETS/NYC/frames/NYC2",
+    "outputdir_prefix": "output/NYC2",
+    "model": "Res50",
+    "model_path": "models/05-ResNet-50_all_ep_35_mae_32.4_mse_76.1.pth",
+
+    "image_size": [480, 640],
+    "batch_size": 8
+}
