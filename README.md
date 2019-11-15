@@ -1,3 +1,12 @@
+# How to run
+
+1. Donwload `5.05-ResNet-50_all_ep_35_mae_32.4_mse_76.1.pth` from [link](https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/gjy3035_mail_nwpu_edu_cn/EvH1YcdFBbRJoc7G_Vqv0DwBGmuyXPlH899OrQ54-cybWQ?e=t93edQ) and place it into `models`
+2. edit `params/*.json` to speicfy some hyper-parameters (including the path to the pretrained model and dataset)
+3. run `python compute_cdmap_from_dataset.py params/xxx.json`
+
+
+---
+
 # **C**rowd **C**ounting **C**ode Framework (C^3-Framework) 
 
 # Python 3 dev version!
